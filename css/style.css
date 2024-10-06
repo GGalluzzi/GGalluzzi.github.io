@@ -1,0 +1,342 @@
+/* Impostazioni di base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Arial', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Stile per l'header */
+#home {
+  height: 100vh; /* Altezza dello schermo */
+  background-image: url('../images/gargonza.jpg'); /* Assicurati che il percorso sia corretto */
+  background-size: cover; /* L'immagine copre tutta l'area */
+  background-position: center; /* L'immagine è centrata */
+  background-repeat: no-repeat; /* Evita la ripetizione dell'immagine */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Per gestire il contenuto interno */
+  text-align: center;
+}
+
+#home::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  z-index: 1;
+}
+
+/* Contenuto dell'header (nomi e pulsante) */
+.header-content {
+  z-index: 2; /* Assicurati che il contenuto sia sopra il gradiente */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra il contenuto */
+  color: white;
+}
+
+.header-content h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombra per far risaltare il testo */
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px; /* Aggiungi margine sotto il paragrafo */
+}
+
+/* Stile per il pulsante */
+
+.cta-button {
+  background-color: #8FBC8F; /* Verde salvia */
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #6B8E23; /* Colore verde oliva più scuro al passaggio del mouse */
+  transform: translateY(-5px); /* Effetto di sollevamento */
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Sezioni generali */
+section {
+  min-height: 100vh; /* L'altezza minima è uguale all'altezza del viewport */
+  display: flex; /* Per centrare il contenuto */
+  align-items: center; /* Allinea il contenuto verticalmente */
+  justify-content: center; /* Allinea il contenuto orizzontalmente */
+  padding: 50px 0; /* Mantiene un po' di spazio all'interno delle sezioni */
+}
+
+/* Sezioni con navigazione a frecce (freccia su e freccia giù) */
+.section-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F0F8F0; /* Colore di sfondo */
+}
+
+/* Stile generale per le sezioni con layout a due colonne */
+.section-flex {
+  display: flex;
+  align-items: center; /* Centra verticalmente il contenuto */
+  justify-content: space-between;
+  padding: 50px; /* Spaziatura interna */
+  /*background-color: #F0F8F0; !* Colore di sfondo *!*/
+}
+
+.image-container {
+  flex: 1; /* L'immagine occupa una parte del layout */
+  padding-right: 20px; /* Spazio tra immagine e testo */
+}
+
+.text-container {
+  flex: 1; /* Il testo occupa l'altra parte */
+}
+
+/* Stile per il testo della sezione */
+.text-container h2 {
+  font-size: 2.5rem;
+  color: #556B2F;
+  margin-bottom: 20px;
+}
+
+.text-container p, .text-container ul {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.text-container ul {
+  list-style: none;
+}
+
+.text-container ul li {
+  margin-bottom: 10px;
+}
+
+.section-image {
+  width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+  height: auto; /* Mantiene le proporzioni */
+  border-radius: 10px; /* Arrotonda gli angoli dell'immagine */
+  margin-left: 20px; /* Aggiungi margine a sinistra */
+  margin-right: 20px; /* Aggiungi margine a destra */
+}
+
+.reverse-layout {
+  flex-direction: row-reverse; /* Inverte l'ordine degli elementi */
+}
+
+.arrow-button {
+  /*background-color: #556B2F; !* Verde oliva scuro *!*/
+  color: black;
+  border: none;
+  /*padding: 10px;*/
+  /*border-radius: 50%;*/
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background-color 0.3s ease;
+}
+
+.arrow-button:hover {
+  background-color: #8FBC8F; /* Cambia colore al passaggio del mouse */
+}
+
+/* Specifico per sezioni con sfondo bianco */
+#schedule, #rsvp, #donations {
+  background-color: #FFF;
+}
+
+
+/* Sezione dettagli */
+#details {
+  padding: 50px 0;
+  background-color: #F0F8F0; /* Colore di sfondo verde molto chiaro */
+  text-align: center;
+}
+
+#details h2 {
+  font-size: 2.5rem;
+  color: #556B2F; /* Verde oliva scuro */
+  margin-bottom: 20px;
+}
+
+#details p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Scaletta */
+#schedule {
+  padding: 50px 0;
+  background-color: #FFF;
+  text-align: center;
+}
+
+#schedule h2 {
+  font-size: 2.5rem;
+  color: #556B2F;
+  margin-bottom: 20px;
+}
+
+#schedule ul {
+  list-style: none;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#schedule ul li {
+  margin-bottom: 10px;
+}
+
+/* Tema del matrimonio */
+#theme {
+  padding: 50px 0;
+  background-color: #F0F8F0;
+  text-align: center;
+}
+
+#theme h2 {
+  font-size: 2.5rem;
+  color: #556B2F;
+  margin-bottom: 20px;
+}
+
+#theme p {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* Sezione RSVP */
+#rsvp {
+  padding: 50px 0;
+  background-color: #FFF;
+  text-align: center;
+}
+
+#rsvp h2 {
+  font-size: 2.5rem;
+  color: #556B2F;
+  margin-bottom: 20px;
+}
+
+#rsvp form {
+  display: inline-block;
+  text-align: left;
+}
+
+#rsvp label {
+  font-size: 1rem;
+  color: #333;
+}
+
+#rsvp input {
+  display: block;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#rsvp button {
+  background-color: #8FBC8F;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#rsvp button:hover {
+  background-color: #6B8E23;
+}
+
+
+.donation-button {
+  background-color: #8FBC8F;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s ease;
+}
+
+.donation-button:hover {
+  background-color: #6B8E23;
+}
+
+#donations {
+  padding: 50px 0;
+  background-color: #F0F8F0; /* Uniformare lo sfondo */
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .section-flex {
+    flex-direction: column; /* Le colonne diventano righe verticali */
+  }
+
+  .image-container, .text-container {
+    padding: 0;
+    margin-bottom: 20px; /* Spazio tra immagine e testo */
+  }
+
+  .section-image {
+    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+  }
+}
+
+.fixed-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #8FBC8F; /* Verde salvia */
+  color: white;
+  border: none;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: none; /* Nascosto di default */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fixed-button:hover {
+  background-color: #6B8E23;
+  transform: translateY(-5px);
+}
