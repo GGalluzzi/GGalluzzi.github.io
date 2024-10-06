@@ -71,6 +71,14 @@ body, html {
   color: white;
 }
 
+.header-content {
+  display: flex;
+  flex-direction: column; /* Disposizione verticale di default */
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
 .header-content h1 {
   font-size: 4rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Ombra per far risaltare il testo */
