@@ -21,14 +21,14 @@
 }
 
 @media (min-width: 768px) {
-  .cta-button {
-    margin: 0 10px; /* Spaziatura orizzontale tra i pulsanti su schermi grandi */
-  }
-
   .header-content {
     flex-direction: row; /* Disposizione orizzontale su schermi più grandi */
     justify-content: center; /* Centra i pulsanti */
     flex-wrap: wrap; /* I pulsanti andranno a capo se necessario */
+  }
+
+  .cta-button {
+    margin: 0 10px; /* Spaziatura orizzontale tra i pulsanti su schermi grandi */
   }
 }
 
@@ -65,10 +65,6 @@ body, html {
 
 /* Contenuto dell'header (nomi e pulsante) */
 .header-content {
-  display: flex;
-  flex-direction: column; /* Disposizione verticale di default */
-  align-items: center;
-  text-align: center;
   padding: 20px;
   z-index: 2; /* Assicurati che il contenuto sia sopra il gradiente */
   position: absolute;
@@ -84,6 +80,11 @@ body, html {
 }
 
 .header-content p {
+  display: flex;
+  flex-direction: column; /* Disposizione verticale di default */
+  align-items: center;
+  text-align: center;
+  padding: 20px;
   font-size: 1.5rem;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px; /* Aggiungi margine sotto il paragrafo */
