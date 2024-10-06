@@ -18,7 +18,9 @@
   .section-image {
     width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
   }
+}
 
+@media (min-width: 768px) {
   .cta-button {
     margin: 0 10px; /* Spaziatura orizzontale tra i pulsanti su schermi grandi */
   }
