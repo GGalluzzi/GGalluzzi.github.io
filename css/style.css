@@ -65,20 +65,17 @@ body, html {
 
 /* Contenuto dell'header (nomi e pulsante) */
 .header-content {
+  display: flex;
+  flex-direction: column; /* Disposizione verticale di default */
+  align-items: center;
+  text-align: center;
+  padding: 20px;
   z-index: 2; /* Assicurati che il contenuto sia sopra il gradiente */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* Centra il contenuto */
   color: white;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column; /* Disposizione verticale di default */
-  align-items: center;
-  text-align: center;
-  padding: 20px;
 }
 
 .header-content h1 {
@@ -95,6 +92,7 @@ body, html {
 /* Stile per il pulsante */
 
 .cta-button {
+  display: inline-block;
   background-color: #8FBC8F; /* Verde salvia */
   color: white;
   padding: 10px 20px;
