@@ -5,9 +5,14 @@
   box-sizing: border-box;
 }
 
+/* Stili per schermi più piccoli */
 @media (max-width: 768px) {
   .section-flex {
     flex-direction: column; /* Le colonne diventano righe verticali */
+  }
+
+  .reverse-layout {
+    flex-direction: column; /* Override del row-reverse su schermi piccoli */
   }
 
   .image-container, .text-container {
@@ -17,10 +22,25 @@
 
   .section-image {
     width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+    border-radius: 10px; /* Arrotonda gli angoli dell'immagine */
+  }
+
+  .section-flex {
+    padding: 20px; /* Riduce il padding interno per schermi piccoli */
   }
 }
 
+/* Stili per schermi più grandi */
 @media (min-width: 768px) {
+
+  .section-flex {
+    flex-direction: row;
+  }
+
+  .reverse-layout {
+    flex-direction: row-reverse; /* Ripristina row-reverse su schermi più grandi */
+  }
+
   .header-content {
     flex-direction: row; /* Disposizione orizzontale su schermi più grandi */
     justify-content: center; /* Centra i pulsanti */
@@ -65,7 +85,6 @@ body, html {
 
 /* Contenuto dell'header (nomi e pulsante) */
 .header-content {
-  padding: 20px;
   z-index: 2; /* Assicurati che il contenuto sia sopra il gradiente */
   position: absolute;
   top: 50%;
@@ -119,11 +138,11 @@ section {
   display: flex; /* Per centrare il contenuto */
   align-items: center; /* Allinea il contenuto verticalmente */
   justify-content: center; /* Allinea il contenuto orizzontalmente */
-  padding: 50px 0; /* Mantiene un po' di spazio all'interno delle sezioni */
 }
 
 /* Sezioni con navigazione a frecce (freccia su e freccia giù) */
 .section-nav {
+  width: 100%; /* Adatta la larghezza al contenitore */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -132,20 +151,28 @@ section {
 
 /* Stile generale per le sezioni con layout a due colonne */
 .section-flex {
+  width: 100%; /* Adatta la larghezza al contenitore */
   display: flex;
   align-items: center; /* Centra verticalmente il contenuto */
   justify-content: space-between;
-  padding: 50px; /* Spaziatura interna */
-  /*background-color: #F0F8F0; !* Colore di sfondo *!*/
 }
 
+/*.reverse-layout {*/
+/*  flex-direction: row-reverse; !* Inverte l'ordine degli elementi *!*/
+/*}*/
+
 .image-container {
-  flex: 1; /* L'immagine occupa una parte del layout */
-  padding-right: 20px; /* Spazio tra immagine e testo */
+  flex: 1;
+}
+
+.section-image {
+  width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
+  height: auto; /* Mantiene le proporzioni */
 }
 
 .text-container {
   flex: 1; /* Il testo occupa l'altra parte */
+  text-align: center;
 }
 
 /* Stile per il testo della sezione */
@@ -158,6 +185,8 @@ section {
 .text-container p, .text-container ul {
   font-size: 1.2rem;
   color: #333;
+  margin-bottom: 10px;
+  padding: 10px;
 }
 
 .text-container ul {
@@ -168,120 +197,17 @@ section {
   margin-bottom: 10px;
 }
 
-.section-image {
-  width: 100%; /* L'immagine occupa tutta la larghezza del contenitore */
-  height: auto; /* Mantiene le proporzioni */
-  border-radius: 10px; /* Arrotonda gli angoli dell'immagine */
-  margin-left: 20px; /* Aggiungi margine a sinistra */
-  margin-right: 20px; /* Aggiungi margine a destra */
-}
-
-.reverse-layout {
-  flex-direction: row-reverse; /* Inverte l'ordine degli elementi */
-}
-
-.arrow-button {
-  /*background-color: #556B2F; !* Verde oliva scuro *!*/
-  color: black;
-  border: none;
-  /*padding: 10px;*/
-  /*border-radius: 50%;*/
-  font-size: 1.5rem;
-  cursor: pointer;
-  margin: 10px 0;
-  transition: background-color 0.3s ease;
-}
-
-.arrow-button:hover {
-  background-color: #8FBC8F; /* Cambia colore al passaggio del mouse */
-}
 
 /* Specifico per sezioni con sfondo bianco */
-#schedule, #rsvp, #donations {
+#schedule, #rsvp{
   background-color: #FFF;
-}
-
-
-/* Sezione dettagli */
-#details {
-  padding: 50px 0;
-  background-color: #F0F8F0; /* Colore di sfondo verde molto chiaro */
-  text-align: center;
-}
-
-#details h2 {
-  font-size: 2.5rem;
-  color: #556B2F; /* Verde oliva scuro */
-  margin-bottom: 20px;
-}
-
-#details p {
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* Scaletta */
-#schedule {
-  padding: 50px 0;
-  background-color: #FFF;
-  text-align: center;
-}
-
-#schedule h2 {
-  font-size: 2.5rem;
-  color: #556B2F;
-  margin-bottom: 20px;
-}
-
-#schedule ul {
-  list-style: none;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-#schedule ul li {
-  margin-bottom: 10px;
-}
-
-/* Tema del matrimonio */
-#theme {
-  padding: 50px 0;
-  background-color: #F0F8F0;
-  text-align: center;
-}
-
-#theme h2 {
-  font-size: 2.5rem;
-  color: #556B2F;
-  margin-bottom: 20px;
-}
-
-#theme p {
-  font-size: 1.2rem;
-  color: #333;
 }
 
 /* Sezione RSVP */
-#rsvp {
-  padding: 50px 0;
-  background-color: #FFF;
-  text-align: center;
-}
-
-#rsvp h2 {
-  font-size: 2.5rem;
-  color: #556B2F;
-  margin-bottom: 20px;
-}
 
 #rsvp form {
   display: inline-block;
   text-align: left;
-}
-
-#rsvp label {
-  font-size: 1rem;
-  color: #333;
 }
 
 #rsvp input {
@@ -309,7 +235,6 @@ section {
   background-color: #6B8E23;
 }
 
-
 /* Footer */
 footer {
   background-color: #333;
@@ -319,25 +244,32 @@ footer {
   font-size: 1rem;
 }
 
-
 .fixed-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  padding: 10px 20px;
-  background-color: #8FBC8F; /* Verde salvia */
+  width: 50px;
+  height: 50px;
+  background-color: rgba(107, 142, 35, 0.5); /* Verde salvia con opacità del 70% */
   color: white;
   border: none;
   text-decoration: none;
-  border-radius: 30px;
-  font-size: 1.2rem;
-  font-weight: bold;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: none; /* Nascosto di default */
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.fixed-button svg {
+  width: 24px;
+  height: 24px;
+  stroke: white; /* Colore dell'icona */
+}
+
 .fixed-button:hover {
-  background-color: #6B8E23;
+  background-color: rgba(107, 142, 35, 0.7); /* Verde salvia con opacità del 70% */
   transform: translateY(-5px);
 }
