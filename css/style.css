@@ -5,6 +5,31 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .section-flex {
+    flex-direction: column; /* Le colonne diventano righe verticali */
+  }
+
+  .image-container, .text-container {
+    padding: 0;
+    margin-bottom: 20px; /* Spazio tra immagine e testo */
+  }
+
+  .section-image {
+    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
+  }
+
+  .cta-button {
+    margin: 0 10px; /* Spaziatura orizzontale tra i pulsanti su schermi grandi */
+  }
+
+  .header-content {
+    flex-direction: row; /* Disposizione orizzontale su schermi più grandi */
+    justify-content: center; /* Centra i pulsanti */
+    flex-wrap: wrap; /* I pulsanti andranno a capo se necessario */
+  }
+}
+
 body, html {
   font-family: 'Arial', sans-serif;
   height: 100%;
@@ -63,6 +88,7 @@ body, html {
   background-color: #8FBC8F; /* Verde salvia */
   color: white;
   padding: 10px 20px;
+  margin: 5px; /* Spaziatura tra i pulsanti */
   text-decoration: none;
   border-radius: 30px;
   font-size: 1.2rem;
@@ -275,26 +301,6 @@ section {
 }
 
 
-.donation-button {
-  background-color: #8FBC8F;
-  color: white;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  transition: background-color 0.3s ease;
-}
-
-.donation-button:hover {
-  background-color: #6B8E23;
-}
-
-#donations {
-  padding: 50px 0;
-  background-color: #F0F8F0; /* Uniformare lo sfondo */
-  text-align: center;
-}
-
 /* Footer */
 footer {
   background-color: #333;
@@ -304,20 +310,6 @@ footer {
   font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-  .section-flex {
-    flex-direction: column; /* Le colonne diventano righe verticali */
-  }
-
-  .image-container, .text-container {
-    padding: 0;
-    margin-bottom: 20px; /* Spazio tra immagine e testo */
-  }
-
-  .section-image {
-    width: 100%; /* L'immagine occupa tutto lo spazio disponibile */
-  }
-}
 
 .fixed-button {
   position: fixed;
